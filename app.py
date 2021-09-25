@@ -57,6 +57,24 @@ def login():
     return render_template("login.html", page_title='login')
 
 
+@app.route("/create_subject/add", methods=['GET', 'POST'])
+def create_subject():
+    if request.method == "POST":
+        subjects = {
+            "subject_name": request.form.get("subject_name"),
+            "subject_number": request.form.get("subject_number"),
+            "subject_description": request.form.get("subject_description"),
+            "subject_mark": request.form.get("subject_mark"),
+            "created_by": session["user"]
+        }
+        print(subjects)
+        mongo.db.subjects.insert_one(subjects)
+        flash("Subject Successfully Added")
+        return redirect(url_for("index"))
+
+    return render_template("create_subject.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
