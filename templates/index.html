@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% block content %}
+
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          <a href="post.html">
+            <h2 class="post-title">
+            Education Is The Test Policy
+            </h2>
+            <h3 class="post-subtitle">
+              Connect with Alicia college
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">New Start</a>
+            on September 24, 2020</p>
+        </div>
+        <hr>
+        <div class="post-preview">
+          <a href="post.html">
+            <h2 class="post-title">
+              Changes to course delivery at
+              Alicia College in accordance with Government public health guidelines.
+            </h2>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">News & View</a>
+            on September 18, 2020</p>
+        </div>
+        <hr>
+        <div class="post-preview">
+          <a href="post.html">
+            <h2 class="post-title">
+              We have pioneered a wide range of initiatives and “firsts” that set us apart
+            </h2>
+            <h3 class="post-subtitle">
+              A College of ‘ Firsts’, UL prides itself on being ahead of many of Ireland’s third
+               level institutions in securing unique education and sports facilities for all students.
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">Home of Firsts</a>
+            on August 24, 2020</p>
+        </div>
+        <hr>
+        <div class="post-preview">
+          <a href="post.html">
+            <h2 class="post-title">
+             Returning to campus for Semester 1
+            </h2>
+            <h3 class="post-subtitle">
+            All the latest information relating to access to University campus facilities 
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">Semester Report</a>
+            on July 8, 2020</p>
+        </div>
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+ 
+
+<p>
+    <div class="accordion" id="accordionExample">
+    {% for subject in subjects %}
+    <div class="card">
+        <div class="card-header" id="heading{{ loop.index }}">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ loop.index }}" aria-expanded="false" 
+                aria-controls="collapse{{ loop.index }}">
+               <strong>>Subject list: {{ subject.subject_name }}</strong>
+                </button>
+                <a href="{{ url_for('delete_subject', subject_id=subject._id) }}" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i> Delete </a>
+        </h2>
+        </div>
+        <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="heading{{ loop.index }}" data-parent="#accordionExample">
+            <div class="card-body">
+           <strong> 
+             <ul>  
+            <li> Subject Number: {{ subject.subject_number }}</li><br>
+            <li>Subject Description: {{ subject.subject_description }}</li><br>
+            <li>Subject Mark: {{ subject.subject_mark }}</li><br>
+            </ul>
+            </strong> 
+
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+    </div>
+    </p>
+{% endblock %}

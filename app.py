@@ -25,6 +25,16 @@ def index():
     return render_template("index.html", subjects=subjects)
 
 
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        flash("Thanks {}, we have received your message!".format(
+              request.form["name"]))
+
+    return render_template("contact.html", page_title='Contact')
+
+
+
 @app.route("/about")
 def about():
     return render_template("about.html", page_title='About')
@@ -55,6 +65,18 @@ def login():
             flash("Incorrect Username and/or password")
             return redirect(url_for("login"))
     return render_template("login.html", page_title='login')
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/create_subject/add", methods=['GET', 'POST'])
