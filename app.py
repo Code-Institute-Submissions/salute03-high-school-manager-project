@@ -17,12 +17,29 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
+DATABASE = "high_school"
+COLLECTION = "subjects"
+
 
 @app.route('/')
 @app.route('/get_subjects')
 def index():
     subjects = list(mongo.db.subjects.find())
     return render_template("index.html", subjects=subjects)
+
+
+@app.route("/delete_subject/<subject_id>")
+def delete_subject(subject_id):
+    print(subject_id)
+    mongo.db.subjects.delete_one({"_id": ObjectId(subject_id)})
+    print(mongo.db.courses.find_one({"_id": ObjectId(subject_id)}))
+    flash("Subject successfully deleted")
+    return redirect(url_for("index"))
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html", page_title='About')
 
 
 @app.route("/contact", methods=["GET", "POST"])
@@ -32,12 +49,6 @@ def contact():
               request.form["name"]))
 
     return render_template("contact.html", page_title='Contact')
-
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html", page_title='About')
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -76,6 +87,14 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", username=username)
 
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    # reomove user from session cookies
+    flash("You have been logged out")
+    session.pop("user")
     return redirect(url_for("login"))
 
 
