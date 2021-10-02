@@ -28,6 +28,31 @@ def index():
     return render_template("index.html", subjects=subjects)
 
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("register.html")
+
+
 @app.route("/delete_subject/<subject_id>")
 def delete_subject(subject_id):
     print(subject_id)
@@ -78,26 +103,6 @@ def login():
     return render_template("login.html", page_title='login')
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
-
-
-@app.route("/logout")
-def logout():
-    # reomove user from session cookies
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
-
-
 @app.route("/create_subject/add", methods=['GET', 'POST'])
 def create_subject():
     if request.method == "POST":
@@ -116,30 +121,24 @@ def create_subject():
     return render_template("create_subject.html")
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-    # check if username already exists in db
-        print(request.form.get("username"))
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
-        if existing_user:
-            flash("Username on file")
-            return redirect(url_for("register"))
+    if session["user"]:
+        return render_template("profile.html", username=username)
 
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
+    return redirect(url_for("login"))
 
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html")
+@app.route("/logout")
+def logout():
+    # reomove user from session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == '__main__':

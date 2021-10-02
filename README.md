@@ -1,108 +1,307 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Alicia College
 
-Welcome salute03,
+This is a website for college student and the lecture.
+<img src="https://res.cloudinary.com/dghvtn8wd/image/upload/v1602162021/college/page_egf2po.png">
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+* The goal for the user is for educational purpose,which is use by the college lecturers to create new  course for the Semester,this website also allow student to view the course created by the each lecturers for them to have the description about the new course,
+mark of the course and the number of the course,this website is useful for the users cause its has good ussfulness for student that are on holidays and lecturer that want to involve student on new course for the new Semester.its also help each college lecturers to register,login and have to create this courses thats student new to focus on.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+<ul>
+<li>An unregistered user can browse this website to see some pages and read what the website is about on home page and about page.</li>
+<li>If they become an user, they will be able to add there course through course page.</li>
+<li>Registered users can view the page with the login details. </li>
+<li>They can add cafe name(course number), course description, course mark, and course name and its all save driectly on (database).</li>
+<li>If they are unable to find the course, they can add a course from "Course  page".</li>
+<li>On "Profile page" , there are some course list there listed).
+</li>
+<li>They can also browse and add/delete  course from "course page","home page".</li>
+</ul>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Deployed page is available here
+https://flask-college.herokuapp.com/
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## UX
 
-A blue button should appear to click: _Make Public_,
+If they havent visted this website before the home page appear first,which shows some wirrting details of the college.
 
-Another blue button should appear to click: _Open Browser_.
+The steps:
+ 
+ # If register:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<ol>
+<li>The user can add username and password to register their account</li>
+<li>It will navigate the user to " profile" page</li>
+</ol>
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+ # If login:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<ol>
+<li>An user can fill in the form to go to "Login"</li>
+<li>It will navigate the user to "profile" page</li>
+<li>click on course page to create a course for other non Registered users</li>
+<li>On the course page , they can add the course  name, description, number and ,mark that each course takes.</li>
+<li>When this is create its loops back to home page with message course created sucessfully</li>
+<li>The user can see their memory is added on the page</li>
+<li>The user can  delete the memory by clicking on the buttons</li>
+</ol>
 
-------
+# Course page
+* Form to create course.
 
-## Release History
+## Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Existing Features
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+<ul>
+<li><b>Feature 1 : Browsing all course created</b> - allows users browsing all the posted course , by visiting home  page</li>
+<li><b>Feature 2 : Course information</b> - allows users reading collage and course  information  </li>
+<li><b>Feature 3 : Add  memories</b> - allows users adding  their course  memory by filling 'course' form</li>
+<li><b>Feature 4 : Contact form</b> - Its allow users to contact collage this is print out on the terminal gitpod and its not pass in database</li>
+</ul>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Features Left to Implement
+- I would like to categorise course
+- I would like to add more user information and user role.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Technologies Used
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+###  Back-end 
+<ul>
+<li><a href="https://www.python.org/" rel="nofollow">Python</a></li>
+<li><a href="https://flask.palletsprojects.com/en/1.1.x/" rel="nofollow">Flask</a> - Python framework For pagination, etc</li>
+<li><a href="https://www.dnspython.org/" rel="nofollow">Dnspython</a>-  DNS toolkit for Python</li>
+<li><a href="https://www.heroku.com" rel="nofollow">Heroku</a> - Cloud application platform </li>
+<li><a href="https://www.mongodb.com/cloud/atlas" rel="nofollow">Mongo DB Atlas</a> - non relational, NO-SQL Database - Cloud based MongoDB server</li>
+</ul>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+###  Front-end 
+<ul>
+<li><a href="https://www.javascript.com/" rel="nofollow">Javascript</a> - For auto-complete, navbar, etc</li>
+<li><a href="https://jquery.com/" rel="nofollow">Jquery</a> - For auto-complete, navbar, etc</li>
+<li><a href="https://getbootstrap.com/">Bootstrap</a>or clean front-end design, and also icons</li>
+<li><a href="https://www.w3schools.com/howto/howto_css_modals.asp" rel="nofollow">W3C Modal Box</a> - The project uses W3c's Modal Box to display welcome text.</li>
+</ul>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Image Library
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+This project is using images from <a href="https://google.com/" rel="nofollow">cloudinary.com</a>, which is used as alternative to image upload facility.
 
-------
+       
+## Testing
 
-## FAQ about the uptime script
+### PC
+I have tested on these browsers:
 
-**Why have you added this script?**
+<ol>
+<li>Google Chrome</li>
+<li>Firefox</li>
+<li>Internet Explorer Edge</li>
+</ol>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Tablet
+<ol>
+<li>Kindle Fire 8 plus</li>
+</ol>
 
-**How will this affect me?**
+### Mobile 
+<ol>
+<li>Samsung Galaxy A21s</li>
+<li>iPhone 7</li>
+<li>HUAWEI Mate 20 lite</li>
+</ol>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+I also used Google Chrome's device emulator to test on all types of devices.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+I have asked on Code Institute's peer review community to test this website and received feedbacks:
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Also, this was run through these validators.
 
-**Can I opt out?**
+<ul>
+<li><a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS Validation Service</a></li>
+<li><a href="https://validator.w3.org/" target="_blank">Markup Validation Service</a></li>
+<li><a href="https://jshint.com/" target="_blank">JS Hint</a></li>
+</ul>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+
+### Test Results
+
+<ol>
+<li>Mobile view on home page is wild and its was fix </li>
+<li>The course list was close to the home page wirttings its was fixed by adding p tag </li>
+<li>The database doesnt received form list before its was fix by chnaging from create_course to courses - fixed</li>
+<li>The 'Delete' button was too big counldnt  - fixed</li>
+<li>Course form was not listed on mobile view and i add the list tag and  - fixed</li>
+</ol>
+
+
+
+
+<h3>How to test this project</h3>
+
+<ol>
+<li>On the home page you have the details news about the college which the course that are created</li>
+<li>Fill in the form with a username and password, press 'Register' button</li>
+<li>It will redirect to "Your Profile Information" page</li>
+<li>Click on  and fill in form to  'Add Your course' page </li>
+<li>Fill in the form - add 2 or more characters on 'Course' field to see auto-complete is working</li>
+<li>create course  form to go to 'home page ' page</li>
+<li> Its will create course and redirect you back to home page</li>
+<li>fill in contact forms its print out on terminal</li>
+<li>Login form is working perfectly and you cant login without register </li>
+<li>register page is working by using new username and password to register</li>
+<li> Add course in course page its appear on home page through database</li>
+<li>Choose one of the course , click on 'Delete' button to delete cafe</li>
+<li>Click on 'Logout' button to logout</li>
+</ol>
+
+
+## Deployment
+
+This project was developed on Github, using Gitpod as IDE. It has only master branch.
+This is pushed and deployed on to heroku.
+
+Deployed project is found here:
+
+https://flask-college.herokuapp.com/
+
+
+This project utilises Mongo DB to use NO-SQL (non-relational) database.
+Before cloning the project:
+
+<ol>
+<li>Add a database collection 'college' on <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a></li>
+<li>Create a database and these tables: 
+   <ul>
+   <li>college</li>
+   <li>courses</li>
+   <li>users</li>
+   </ul>
+</li>
+</ol>
+
+## To run this project on your local repository
+This project will be deployed following these steps:
+<ol>
+<li>Add your own repository on your Github account</li>
+<li>Click the green 'Gitpod' button on top-right corner of this repo(If you can't find the button, install 'Gitpod' extension on your Chrome browser</li>
+<li>Gitpod launches</li>
+<li>Run the following command (Replace the 'USERNAME' and 'REPO' to your username and repo name):</li>
+ 
+```
+
+git remote set-url origin https://github.com/USERNAME/REPO.git
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+
+
+<li>Add env.py file on your root folder, add these lines:
+ 
+```
+import os
+
+os.environ['SECRET_KEY'] = '- YOUR SECRET KEY - '
+os.environ['MONGO_URI'] = '- YOUR MONGO URI -' 
+
+```
+</li>
+<li>Run this command below to install all the modules on requirements.txt file:
+
 ```
 
-**Anything more?**
+pip3 install -r requirements.txt
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+```
+</li>
+<li>Run the code by running this code below:
+ 
+```
 
----
+python3 app.py
 
-Happy coding!
+```
+
+</li>
+</ol>
+
+
+## Remote Deployment (Run the project on Heroku.com)
+If you want to add it to your Heroku account, follow the instructions below:
+
+<ol>
+<li>Add an app for this project</li>
+<li>Add environment variables 'SECRET_KEY' and 'MONGO_URI' on your app</li> 
+<li>Add PORT on your app</li> 
+<li>On your Gitpod workspace, login to heroku by running this code below:
+ 
+ 
+```
+
+heroku login -i
+
+```
+
+</li> 
+<li>Select your app by running this code below (Replace '- YOUR APP NAME -' with your own app name):
+ 
+```
+
+git init
+
+heroku git:remote -a  - YOUR APP NAME -
+
+```
+
+</li>
+<li>Run this code below to push the code to your Heroku app:
+
+```
+
+git push heroku master
+
+```
+
+</li>
+<li>When the app is deployed, click on 'Open App' button to run your app </li>
+</ol>
+
+## Credits
+
+### Content
+
+<ul>
+<li>This project is using icons from Bootstrap</li>
+</ul>
+
+### Media
+
+<ul>
+<li>- The photos and texts used in this website are taken from:
+<ul>
+<li>https://www.google.com</li>
+
+</ul>
+</li>
+
+
+
+</ul>
+
+
+### Acknowledgements
+
+- I received inspiration for this project from a resume project provided by Code Institute.
+- My new mentor brain
