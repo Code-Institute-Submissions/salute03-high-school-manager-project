@@ -17,7 +17,7 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
-DATABASE = "high_school"
+DATABASE = "days"
 COLLECTION = "subjects"
 
 
@@ -62,11 +62,6 @@ def delete_subject(subject_id):
     return redirect(url_for("index"))
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html", page_title='About')
-
-
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
@@ -107,10 +102,12 @@ def login():
 def create_subject():
     if request.method == "POST":
         subjects = {
+            "days_name": request.form.get("days_name"),
             "subject_name": request.form.get("subject_name"),
-            "subject_number": request.form.get("subject_number"),
-            "subject_description": request.form.get("subject_description"),
-            "subject_mark": request.form.get("subject_mark"),
+            "examination_focus": request.form.get("examination_focus"),
+            "duration": request.form.get("duration"),
+            "overall_score": request.form.get("overall_score"),
+            "date": request.form.get("date"),
             "created_by": session["user"]
         }
         print(subjects)
