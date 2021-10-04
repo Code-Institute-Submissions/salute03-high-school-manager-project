@@ -14,18 +14,27 @@
   </div>
 <section>
   <ul class="collapsible">
-    {% for subject in subjects %}
+    {% for assignment in assignments %}
     <li>
         <div class="collapsible-header white-text light-blue darken-4 text-shadow">
+          <div class="col s3">
             <i class="fas fa-caret-down"></i>
-            <strong>{{ subject.days_name }}</strong> : {{ subject.date }}
+            {% if session.user|lower == assignment.created_by|lower %}
+              <a href="{{ url_for('delete_assignment',  assignment_id=assignment._id) }}" class="btn-small green accent-4">Delete</a> 
+              <a href="{{ url_for('edit_assignment', assignment_id=assignment._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+            {% endif %}
+        </div>
+        <div class="col s9">
+            <strong>{{ assignment.days_name }}</strong> 
+        </div>
         </div>
         <div class="collapsible-body">
-            <strong>{{ subject.subject_name }}</strong>
-            <p>{{ subject.examination_focus }}</p>
-            <p>{{ subject.duration }}</p>
-            <p>{{ subject.overall_score }}</p>
-            <p><em>by:  {{ subject.created_by }}</em></p>
+            <strong>{{ assignment.subject_name }}</strong>
+            <p>{{ assignment.topic_name }}</p>
+            <p>{{ assignment.question }}</p>
+            <p>{{ assignment.due_date }}</p>
+            <p>{{ assignment.mark }}</p>
+            <p><em>by:  {{ assignment.created_by }}</em></p>
         </div>
     </li>
     {% endfor %}

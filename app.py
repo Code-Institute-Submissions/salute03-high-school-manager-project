@@ -17,15 +17,12 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 
-DATABASE = "days"
-COLLECTION = "subjects"
-
 
 @app.route('/')
-@app.route('/get_subjects')
+@app.route('/get_assignments')
 def index():
-    subjects = list(mongo.db.subjects.find())
-    return render_template("index.html", subjects=subjects)
+    assignments = list(mongo.db.assignments.find())
+    return render_template("index.html", assignments=assignments)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -51,24 +48,6 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
-
-
-@app.route("/delete_subject/<subject_id>")
-def delete_subject(subject_id):
-    print(subject_id)
-    mongo.db.subjects.delete_one({"_id": ObjectId(subject_id)})
-    print(mongo.db.courses.find_one({"_id": ObjectId(subject_id)}))
-    flash("Subject successfully deleted")
-    return redirect(url_for("index"))
-
-
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        flash("Thanks {}, we have received your message!".format(
-              request.form["name"]))
-
-    return render_template("contact.html", page_title='Contact')
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -98,24 +77,52 @@ def login():
     return render_template("login.html", page_title='login')
 
 
-@app.route("/create_subject/add", methods=['GET', 'POST'])
-def create_subject():
+@app.route("/create_assignment/add", methods=['GET', 'POST'])
+def create_assignment():
     if request.method == "POST":
-        subjects = {
-            "days_name": request.form.get("days_name"),
+        assignment = {
+            "days-name": request.form.get("days_name"),
             "subject_name": request.form.get("subject_name"),
-            "examination_focus": request.form.get("examination_focus"),
-            "duration": request.form.get("duration"),
-            "overall_score": request.form.get("overall_score"),
-            "date": request.form.get("date"),
+            "topic_name": request.form.get("topic_name"),
+            "question": request.form.get("question"),
+            "due_date": request.form.get("due_date"),
+            "mark": request.form.get("mark"),
             "created_by": session["user"]
         }
-        print(subjects)
-        mongo.db.subjects.insert_one(subjects)
-        flash("Subject Successfully Added")
+        
+        mongo.db.assignments.insert_one(assignment)
+        flash("Assignments Successfully Added")
         return redirect(url_for("index"))
 
-    return render_template("create_subject.html")
+    days = mongo.db.days.find().sort("days_name", 1)
+    return render_template("create_assignment.html", days=days)
+
+
+@app.route("/edit_assignment/<assignment_id>", methods=["GET", "POST"])
+def edit_assignment(assignment_id):
+    if request.method == "POST":
+        submit = {
+            "days_name": request.form.get("days_name"),
+            "subject_name": request.form.get("subject_name"),
+            "topic_name": request.form.get("topic_name"),
+            "question": request.form.get("question"),
+            "due_date": request.form.get("due_date"),
+            "mark": request.form.get("mark"),
+            "created_by": session["user"]
+        }
+        mongo.db.assignments.update({"_id": ObjectId(assignment_id)}, submit)
+        flash("Assignments Successfully Updated")
+    
+    assignment = mongo.db.assignments.find_one({"_id": ObjectId(assignment_id)})
+    days = mongo.db.days.find().sort("days_name", 1)
+    return render_template("edit_assignment.html", assignment=assignment, days=days) 
+
+
+@app.route("/delete_assignment/<assignment_id>")
+def delete_assignment(assignment_id):
+    mongo.db.assignments.remove({"_id": ObjectId(assignment_id)})
+    flash("Assignment Successfully Deleted")
+    return redirect(url_for("index"))
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
