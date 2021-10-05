@@ -1,307 +1,292 @@
-## Alicia College
+# [St John's](https://high-school-manager-project.herokuapp.com/)   
 
-This is a website for college student and the lecture.
-<img src="https://res.cloudinary.com/dghvtn8wd/image/upload/v1602162021/college/page_egf2po.png">
+![Various Devices](https://high-school-manager-project.herokuapp.com/static/img/responsive.png)
 
-* The goal for the user is for educational purpose,which is use by the college lecturers to create new  course for the Semester,this website also allow student to view the course created by the each lecturers for them to have the description about the new course,
-mark of the course and the number of the course,this website is useful for the users cause its has good ussfulness for student that are on holidays and lecturer that want to involve student on new course for the new Semester.its also help each college lecturers to register,login and have to create this courses thats student new to focus on.
+"St John's" - Practical Python and Data-Centric Development Milestone Project.
 
+The main purpose of this full-stack MongoDB-based Flask project is to create a database for educational to allows users to create, read, update and delete (CRUD) assignments.
+This web page is maily used by class teachers of  [St John's] High Shcool during the covid-19 lock down, to create Assignments for students, From which students can read the questions. At the same time, it gives the opportunity to create an account and benifit from having convenient access to all features of the website.
+Registered users can add new recipes, edit and delete their own ones, as well as edit their username and password or delete account.  
 
-<ul>
-<li>An unregistered user can browse this website to see some pages and read what the website is about on home page and about page.</li>
-<li>If they become an user, they will be able to add there course through course page.</li>
-<li>Registered users can view the page with the login details. </li>
-<li>They can add cafe name(course number), course description, course mark, and course name and its all save driectly on (database).</li>
-<li>If they are unable to find the course, they can add a course from "Course  page".</li>
-<li>On "Profile page" , there are some course list there listed).
-</li>
-<li>They can also browse and add/delete  course from "course page","home page".</li>
-</ul>
+---
 
+## Table of Contents
+1. [UX](#ux)
+    - [User Stories](#user-stories)
+    - [Design](#design)
+    - [Wireframes](#wireframes)
 
-## Deployed page is available here
-https://flask-college.herokuapp.com/
+2. [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left to Implement](#features-left-to-implement)
 
+3. [Technologies Used](#technologies-used)
 
+4. [Testing](#testing)
+    - [Manual Testing](#manual-testing)
+    - [Validators](#validators)
+    - [Compatibility and Responsiveness](#compatibility-and-responsiveness)
+
+5. [Deployment](#deployment)
+    - [Local Deployment](#local-deployment)
+    - [Heroku Deployment](#heroku-deployment)
+
+6. [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+    - [Code](#code)
+    - [Acknowledgements](#acknowledgements)
+
+---
 
 ## UX
+My main goal in UX was to built a website easy to navigate, simple design and simple to use; where users can create assignments, view all the assignments created by teachers,
+teachers can edit and delete their assignments. The target audience for this webpage are teachers and students of St John's High school.
 
-If they havent visted this website before the home page appear first,which shows some wirrting details of the college.
+### User Stories
+**As a user, I want/expect:**
+- to read the assignment, showing the subject, topic, questions, deu date, mark for the assignment and The teacher's name.
+- to register my profile, through the register page
+- to login to the webpage
+- to create assignments
+- to edit assignments 
+- to delete assignments
+- to log out
+- to use the website from any device (laptop, tablet, mobile)
+### Design
+The goal in design was to create a website that is overall user friendly, simple to navigate and appealing to the sight.
+#### Framework
+[Materialize](https://materializecss.com/), front-end framework based on Material Design was chosen for this project for its modern interface and ease of use. It was used for creating features such as navbar, cards, forms, modal, as well as for its grid.  
+[JQuery](https://jquery.com/) was used for initializing some Materialize elements listed above, as well as for custom functions, simple DOM manipulation.
 
-The steps:
- 
- # If register:
+### Wireframes
+[Balsamiq Wireframes](https://balsamiq.com/) was used to create all wireframes for the project.
 
-<ol>
-<li>The user can add username and password to register their account</li>
-<li>It will navigate the user to " profile" page</li>
-</ol>
+Initial wireframes with some comments for both desktop and mobile devices can be found [here](https://github.com/irinatu17/MyCookBook/tree/master/mycookbook/wireframes).
 
-
- # If login:
-
-<ol>
-<li>An user can fill in the form to go to "Login"</li>
-<li>It will navigate the user to "profile" page</li>
-<li>click on course page to create a course for other non Registered users</li>
-<li>On the course page , they can add the course  name, description, number and ,mark that each course takes.</li>
-<li>When this is create its loops back to home page with message course created sucessfully</li>
-<li>The user can see their memory is added on the page</li>
-<li>The user can  delete the memory by clicking on the buttons</li>
-</ol>
-
-# Course page
-* Form to create course.
+---
 
 ## Features
-
-
 ### Existing Features
 
-<ul>
-<li><b>Feature 1 : Browsing all course created</b> - allows users browsing all the posted course , by visiting home  page</li>
-<li><b>Feature 2 : Course information</b> - allows users reading collage and course  information  </li>
-<li><b>Feature 3 : Add  memories</b> - allows users adding  their course  memory by filling 'course' form</li>
-<li><b>Feature 4 : Contact form</b> - Its allow users to contact collage this is print out on the terminal gitpod and its not pass in database</li>
-</ul>
+#### Navbar   
+The navbar is fixed at the top of the page, this allows a user to easily navigate throughout the website. The logo is located in the top right corner on a desktop. It redirects the user to the home page when clicked.
+On the smaller resolutions (tablet, mobile) the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.  
+The navebar holds the the Home, Log In and Register button at the top right coner before a user (teacher) is registered.
+
+While logged in, The navebar holds the Home, Profile, Create Assignment and Log out buttons.
+
+#### Register
+It stores the registered user to the database and redirects thr user to the user's profile.
 
 
-### Features Left to Implement
-- I would like to categorise course
-- I would like to add more user information and user role.
+#### Profile
+It holds and displays the users profile once registered.
+#### Create Assignment
+It displays forms for creating assignments and has a create assignment button that stores the content in the database
+and displayed the created content on the home page in an acordion fron materialize.
+
+#### Edit assignment
+It displays form for editing assignments and holds an edit assignment button which edits the assignment and display the content
+on the home page, it holds a cancel button which redirects back to create assignment page.
+
+#### LogIn
+It logs in a registered user, to give access to editing and deleting of assignments as well as creating assignment
+
+#### Logout
+It redirects back to home page and logout registered user.
 
 
 
+
+---
 
 ## Technologies Used
 
+- [GitPod](https://www.gitpod.io/) - an online IDE for developing this project.
+- [Git](https://git-scm.com/) - for version control.
+- [GitHub](https://git-scm.com/) - for remotely storing project's code.
+- [PIP](https://pip.pypa.io/en/stable/installing/) - for installation of necessary tools.
+- [Am I Responsive](http://ami.responsivedesign.is/) - for creation of the images in the readme file and checking responsiveness.
+- [ImgBB](https://imgbb.com/) - to host images used in README
+### Front-End
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) - to build the foundation of the project.
+- [CSS](https://developer.mozilla.org/en-US/docs/Archive/CSS3) - to create custom styles.
+- [JS](https://www.javascript.com) - to create some functionalities.
+### Back-End
+- [Python 3.8.2](https://www.python.org/) -  back-end programming language used in this project.
+- [Flask 1.1.2](https://flask.palletsprojects.com/en/1.1.x/) - microframework for building and rendering pages.
+- [MongoDB Atlas](https://www.mongodb.com/) - NoSQL database for storing back-end data.
+- [PyMongo](https://api.mongodb.com/python/current/) - for Python to get access the MongoDB database.
+- [WTForms 2.2.1](https://pypi.org/project/WTForms/) - for creating forms with validation.
+- [Werkzeug 0.16.1](https://werkzeug.palletsprojects.com/en/0.16.x/) - to generate and verify password hashing.
+- [Jinja 2.10.1](https://jinja.palletsprojects.com/en/2.10.x/) - templating language for Python, to display back-end data in HTML.
+- [Heroku](https://heroku.com/) - to host the project.
+### Libraries
+- [Materialize 1.0.0](https://materializecss.com/) - main responsive modern front-end framework used for grid and responsivesness.
+- [Google Fonts](https://fonts.google.com/) - to import fonts.
+- [FontAwesome](https://fontawesome.com/) - to provide icons used across the project.
+- [JQuery 3.5.0](https://jquery.com/) - to simplify DOM manipulation and to initialize Materialize functions.
+---
 
-###  Back-end 
-<ul>
-<li><a href="https://www.python.org/" rel="nofollow">Python</a></li>
-<li><a href="https://flask.palletsprojects.com/en/1.1.x/" rel="nofollow">Flask</a> - Python framework For pagination, etc</li>
-<li><a href="https://www.dnspython.org/" rel="nofollow">Dnspython</a>-  DNS toolkit for Python</li>
-<li><a href="https://www.heroku.com" rel="nofollow">Heroku</a> - Cloud application platform </li>
-<li><a href="https://www.mongodb.com/cloud/atlas" rel="nofollow">Mongo DB Atlas</a> - non relational, NO-SQL Database - Cloud based MongoDB server</li>
-</ul>
-
-
-###  Front-end 
-<ul>
-<li><a href="https://www.javascript.com/" rel="nofollow">Javascript</a> - For auto-complete, navbar, etc</li>
-<li><a href="https://jquery.com/" rel="nofollow">Jquery</a> - For auto-complete, navbar, etc</li>
-<li><a href="https://getbootstrap.com/">Bootstrap</a>or clean front-end design, and also icons</li>
-<li><a href="https://www.w3schools.com/howto/howto_css_modals.asp" rel="nofollow">W3C Modal Box</a> - The project uses W3c's Modal Box to display welcome text.</li>
-</ul>
-
-### Image Library
-
-This project is using images from <a href="https://google.com/" rel="nofollow">cloudinary.com</a>, which is used as alternative to image upload facility.
-
-       
 ## Testing
+### Manual Testing 
+#### User stories testing
+All the following manual testing was implemented on both desktop and mobile devices.
+##### Home
+The home button worked on clicked, it redirects back to he home page and it worked across all devices.
+#### Register
+After filling the form, On clicking the "Register" button, i was logined in as a user and a profile page was created for me.
+##### Login
+Clicking on the "Login" button in the navbar opens the form, allowing me to login to my account. I tried to leave empty fields or input incorrect details, but I was not able to submit the form if something was entered incorrectly. After a successful login I was redirected to the home page, seeing the message that I was logged in. 
+I also checked the link to the Register page at the bottom of the form, which worked well.
 
-### PC
-I have tested on these browsers:
+##### Delete Assignment
+The delete button functions correctly as it removes content from the page.
 
-<ol>
-<li>Google Chrome</li>
-<li>Firefox</li>
-<li>Internet Explorer Edge</li>
-</ol>
+##### Edit Assignment
+The edit button worked perfectly and only a registered user can edit assignment.
 
-### Tablet
-<ol>
-<li>Kindle Fire 8 plus</li>
-</ol>
+#### Debugger
 
-### Mobile 
-<ol>
-<li>Samsung Galaxy A21s</li>
-<li>iPhone 7</li>
-<li>HUAWEI Mate 20 lite</li>
-</ol>
-
-I also used Google Chrome's device emulator to test on all types of devices.
+I was manually testing the app with **debugger**: `debug=True` throughout all the development process. 
+Every time when there was an error (when app crashed), the debugger displayed an error message in the terminal to the view, that allowed me to find the location of the error and fix it.
 
 
-I have asked on Code Institute's peer review community to test this website and received feedbacks:
+### Validators
+#### Html
+All the HTML files were tested through [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input). Since it does not recognize Jinja2 templating language, it showed a number of errors. Apart from that, no other errors were found across the html pages.
+#### CSS
+CSS files were tested through [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). Since it does not recognize CSS variables (I use `:root{}` for colours and fonts variables), there were several Parse Errors found.  
+As well as that, there are a few error warnings for some -webkit, -moz pseudo element selectors. Both errors can be safely ignored as they are not errors in fact. The rest of the CSS files was completely valid.
+#### JavaScript
+JS file was tested through [Esprima](https://esprima.org/demo/validate.html) and [JSHint](https://jshint.com/) validators, code was syntactically valid.  "$" was not defined by JSHint (it is necessary for jQuery Materialize initializing).
+#### Python
+All python files were tested through [PEP8 Online](http://pep8online.com/) validator and were completely PEP8 compliant, 
 
 
-Also, this was run through these validators.
-
-<ul>
-<li><a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS Validation Service</a></li>
-<li><a href="https://validator.w3.org/" target="_blank">Markup Validation Service</a></li>
-<li><a href="https://jshint.com/" target="_blank">JS Hint</a></li>
-</ul>
+### Compatibility and Responsiveness
+This website had been being tested during the development across **multiple browsers** (Chrome,FireFox, microsoft edge) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy, Sony Xperia), tablets(iPad, iPadPro) and laptops 
+As well as on **Google Chrome's developer tools** to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.   
+The i used **lighthouse** to test and check the performance rate of the website.
+I also used [Am I Responsive](http://ami.responsivedesign.is/) online tool for checking responsiveness on different devices.   
 
 
-### Test Results
-
-<ol>
-<li>Mobile view on home page is wild and its was fix </li>
-<li>The course list was close to the home page wirttings its was fixed by adding p tag </li>
-<li>The database doesnt received form list before its was fix by chnaging from create_course to courses - fixed</li>
-<li>The 'Delete' button was too big counldnt  - fixed</li>
-<li>Course form was not listed on mobile view and i add the list tag and  - fixed</li>
-</ol>
-
-
-
-
-<h3>How to test this project</h3>
-
-<ol>
-<li>On the home page you have the details news about the college which the course that are created</li>
-<li>Fill in the form with a username and password, press 'Register' button</li>
-<li>It will redirect to "Your Profile Information" page</li>
-<li>Click on  and fill in form to  'Add Your course' page </li>
-<li>Fill in the form - add 2 or more characters on 'Course' field to see auto-complete is working</li>
-<li>create course  form to go to 'home page ' page</li>
-<li> Its will create course and redirect you back to home page</li>
-<li>fill in contact forms its print out on terminal</li>
-<li>Login form is working perfectly and you cant login without register </li>
-<li>register page is working by using new username and password to register</li>
-<li> Add course in course page its appear on home page through database</li>
-<li>Choose one of the course , click on 'Delete' button to delete cafe</li>
-<li>Click on 'Logout' button to logout</li>
-</ol>
-
+---
 
 ## Deployment
+### Local Deployment
+To be able to run this project, the following tools have to be installed:
+- An IDE  (I used [GitPod](https://www.gitpod.io/) online IDE for creating this project)
+- [MongoDB Atlas](https://www.mongodb.com/) (for creation your database)
+- [Github](https://github.com/)
+- [PIP](https://pip.pypa.io/en/stable/installing/) 
+- [Python](https://www.python.org/)   
+#### Directions
+1. You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:   
+`git clone https://github.com/salute03/high-school-manager-project`    
+Alternatively, you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
+2. In the terminal window change directory (CD) to the correct file location (directory that you have just created).
+3. Set up environment variables:
+    - Create **.env** file in the root directory.
+    - On the top of the file add `import os` to set the environment variables in the operating system.
+    - Set the connection to your MongoDB database(MONGO_URI) and a SECRET_KEY with the following syntax:
+    `os.environ["SECRET_KEY"] = "YourSecretKey"`   
+    `os.environ["MONGO_URI"] = "YourMongoURI"`  
+    .
+4. Install all requirements from the **requirements.txt** file putting this command into your terminal:   
+`pip3 install -r requirements.txt`  
+*Note: GitPod does not require `sudo`, so if you use another IDE, you will need to include `sudo` in the beginning of the command: `sudo pip3 install -r requirements.txt`.*
+5. Create a new Database called "high_school_managers" in [MongoDB Atlas](https://www.mongodb.com/).   
+*You can sign up for free account, if you do not have one.*
+6. In "high_school_managers" database create five following collections:
 
-This project was developed on Github, using Gitpod as IDE. It has only master branch.
-This is pushed and deployed on to heroku.
-
-Deployed project is found here:
-
-https://flask-college.herokuapp.com/
-
-
-This project utilises Mongo DB to use NO-SQL (non-relational) database.
-Before cloning the project:
-
-<ol>
-<li>Add a database collection 'college' on <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a></li>
-<li>Create a database and these tables: 
-   <ul>
-   <li>college</li>
-   <li>courses</li>
-   <li>users</li>
-   </ul>
-</li>
-</ol>
-
-## To run this project on your local repository
-This project will be deployed following these steps:
-<ol>
-<li>Add your own repository on your Github account</li>
-<li>Click the green 'Gitpod' button on top-right corner of this repo(If you can't find the button, install 'Gitpod' extension on your Chrome browser</li>
-<li>Gitpod launches</li>
-<li>Run the following command (Replace the 'USERNAME' and 'REPO' to your username and repo name):</li>
- 
-```
-
-git remote set-url origin https://github.com/USERNAME/REPO.git
 
 ```
-
-
-<li>Add env.py file on your root folder, add these lines:
- 
+###### assignments
 ```
-import os
-
-os.environ['SECRET_KEY'] = '- YOUR SECRET KEY - '
-os.environ['MONGO_URI'] = '- YOUR MONGO URI -' 
-
-```
-</li>
-<li>Run this command below to install all the modules on requirements.txt file:
-
+_id: <ObjectId>
+days_name: <String>
+subject_name: <String>
+topic_name: <String>
+question: <String>
+due_date: <String>
+mark: <String>
+created_by: <String>
 ```
 
-pip3 install -r requirements.txt
-
+###### Monday
 ```
-</li>
-<li>Run the code by running this code below:
- 
+_id: <ObjectId>
+days_name: <String>
 ```
-
-python3 app.py
-
+###### Tuesday
 ```
-
-</li>
-</ol>
-
-
-## Remote Deployment (Run the project on Heroku.com)
-If you want to add it to your Heroku account, follow the instructions below:
-
-<ol>
-<li>Add an app for this project</li>
-<li>Add environment variables 'SECRET_KEY' and 'MONGO_URI' on your app</li> 
-<li>Add PORT on your app</li> 
-<li>On your Gitpod workspace, login to heroku by running this code below:
- 
- 
+_id: <ObjectId>
+days_name: <String>
+```
+###### Wednesday
+```
+_id: <ObjectId>
+days_name: <String>
+```
+###### thursday
+```
+_id: <ObjectId>
+days_name: <String>
+```
+###### Friday
+```
+_id: <ObjectId>
+days_name: <String>
 ```
 
-heroku login -i
-
+###### Users
 ```
-
-</li> 
-<li>Select your app by running this code below (Replace '- YOUR APP NAME -' with your own app name):
- 
+_id: <ObjectId>
+username: <String>
+password: <String>
 ```
+7. You will now be able to run the application using the following command `python3 app.py`.   
 
-git init
+### Heroku Deployment
+To deploy the project to [Heroku](https://heroku.com/) the following steps need to be completed:
+1. Create a **requirement.txt** file, which contains a list of the dependencies, using the following command in the terminal:  
+`pip3 freeze > requirements.txt`
+2. Create a **Procfile**, in order to tell Heroku how to run the project, using the following command in the terminal:   
+`echo web: python app.py > Procfile`
+3. `git add`, `git commit` and `git push` these files to GitHub repository
+4. Create a **new app** in Heroku, assigning a name (must be unique) and set a region (for my project I set Europe)
+5. From the Heroku dashboard link the new Heroku app to your GitHub repository:    
+    - "Deploy" -> "Deployment method" -> "GitHub"
+    - then "Enable automatic deployment"
+6. To start the web process, put the following command into the terminal: `heroku ps:scale web=1` to scale dynos
+7. In the **Settings** tab of the new Heroku app, click on "Reveal Config Vars" and set the following config vars:
+    - **IP** : 0.0.0.0
+    - **PORT** : 5000
+    - **MONGO_URI** : `<link to your MongoDB database>`
+    - **SECRET_KEY** : `<your secret key>`
+    - **DEBUG**: **FALSE**  
+*Note: your MONGO_URI and SECRET_KEY must match the ones you entered in .env.py file*
 
-heroku git:remote -a  - YOUR APP NAME -
+8. The app will be deployed and ready to run. Click "Open App" to view the app.   
 
-```
+**Note**: if you have not linked GitHub and Heroku following step N.5, alternatively as the last step of deployment, you can put the following command into your terminal:   
+ `heroku login`, after a successful log in `git push heroku master` - to push the app to Heroku, and finally click "Open App" in Heroku dashboard to view the app.
 
-</li>
-<li>Run this code below to push the code to your Heroku app:
-
-```
-
-git push heroku master
-
-```
-
-</li>
-<li>When the app is deployed, click on 'Open App' button to run your app </li>
-</ol>
+---
 
 ## Credits
-
-### Content
-
-<ul>
-<li>This project is using icons from Bootstrap</li>
-</ul>
-
-### Media
-
-<ul>
-<li>- The photos and texts used in this website are taken from:
-<ul>
-<li>https://www.google.com</li>
-
-</ul>
-</li>
-
-
-
-</ul>
+ I received inspiration for this project from a task manager project in the Code Institute module.
+ Most of the codes in python are from Tim Nelson  (the instructor of the Task manager project in code institue module).
+ Most of the codes in style.css was written by me. 
 
 
 ### Acknowledgements
+ Code Institute tutors, fellow students, my friends and my family for the time, assistance and support!
+ Slack Community
+ my Mentor Marcel Mulders for his deepest support.
+ 
+---
 
-- I received inspiration for this project from a resume project provided by Code Institute.
-- My new mentor brain
+**This project is for educational use only.**
