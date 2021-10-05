@@ -1,6 +1,6 @@
 # [St John's](https://high-school-manager-project.herokuapp.com/)   
 
-![Various Devices](https://high-school-manager-project.herokuapp.com/static/img/responsive.png)
+![Various Devices](https://high-school-manager-project.herokuapp.com/static/img/responsive.jpg.png)
 
 "St John's" - Practical Python and Data-Centric Development Milestone Project.
 
@@ -10,34 +10,6 @@ Registered users can add new recipes, edit and delete their own ones, as well as
 
 ---
 
-## Table of Contents
-1. [UX](#ux)
-    - [User Stories](#user-stories)
-    - [Design](#design)
-    - [Wireframes](#wireframes)
-
-2. [Features](#features)
-    - [Existing Features](#existing-features)
-    - [Features Left to Implement](#features-left-to-implement)
-
-3. [Technologies Used](#technologies-used)
-
-4. [Testing](#testing)
-    - [Manual Testing](#manual-testing)
-    - [Validators](#validators)
-    - [Compatibility and Responsiveness](#compatibility-and-responsiveness)
-
-5. [Deployment](#deployment)
-    - [Local Deployment](#local-deployment)
-    - [Heroku Deployment](#heroku-deployment)
-
-6. [Credits](#credits)
-    - [Content](#content)
-    - [Media](#media)
-    - [Code](#code)
-    - [Acknowledgements](#acknowledgements)
-
----
 
 ## UX
 My main goal in UX was to built a website easy to navigate, simple design and simple to use; where users can create assignments, view all the assignments created by teachers,
