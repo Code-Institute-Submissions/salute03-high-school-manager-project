@@ -4,11 +4,10 @@
 <div class="home-container">
     <div class="hero-image">
         <div class="text-block-home center-align">
-          <h1 class="uppercase primary-heading">My CookBook</h1>
-          <p class="home-paragpaph">
-            Simple way to view, create and store
-            your recipes
-          </p>
+          <h1 class="uppercase primary-heading">St. John's</h1>
+          <h2 class="home-paragpaph">
+           High School
+          </h2>
         </div>
     </div>
   </div>
@@ -29,10 +28,10 @@
         </div>
         </div>
         <div class="collapsible-body">
-            <strong>{{ assignment.subject_name }}</strong>
-            <p>{{ assignment.topic_name }}</p>
-            <p>{{ assignment.question }}</p>
-            <p>{{ assignment.due_date }}</p>
+            <p><strong>Subject:</strong>{{ assignment.subject_name }}</p>
+            <p><strong>Topic:</strong>{{ assignment.topic_name }}</p>
+            <p><strong>Questions:</strong>{{ assignment.question }}</p>
+            <p><strong>Due date:</strong>{{ assignment.due_date }}</p>
             <p>{{ assignment.mark }}</p>
             <p><em>by:  {{ assignment.created_by }}</em></p>
         </div>
