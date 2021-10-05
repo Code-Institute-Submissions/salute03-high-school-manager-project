@@ -32,11 +32,7 @@ The goal in design was to create a website that is overall user friendly, simple
 [JQuery](https://jquery.com/) was used for initializing some Materialize elements listed above, as well as for custom functions, simple DOM manipulation.
 
 ### Wireframes
-[Balsamiq Wireframes](https://balsamiq.com/) was used to create all wireframes for the project.
-
-Initial wireframes with some comments for both desktop and mobile devices can be found [here](https://github.com/irinatu17/MyCookBook/tree/master/mycookbook/wireframes).
-
----
+I use pen and paper. And the images are loacted in the wireframe folder.
 
 ## Features
 ### Existing Features
@@ -68,7 +64,8 @@ It logs in a registered user, to give access to editing and deleting of assignme
 #### Logout
 It redirects back to home page and logout registered user.
 
-
+## Features for future implementation
+I will like to develop a profile page with more user informations like image.
 
 
 ---
@@ -136,6 +133,7 @@ JS file was tested through [Esprima](https://esprima.org/demo/validate.html) and
 #### Python
 All python files were tested through [PEP8 Online](http://pep8online.com/) validator and were completely PEP8 compliant, 
 
+All validation images are stored in wireframe folder.
 
 ### Compatibility and Responsiveness
 This website had been being tested during the development across **multiple browsers** (Chrome,FireFox, microsoft edge) and on **multiple devices**: mobile (iPhone 5, 6, 8, Samsung Galaxy, Sony Xperia), tablets(iPad, iPadPro) and laptops 
@@ -171,10 +169,7 @@ Alternatively, you can save a copy of this repository by clicking the green butt
 *Note: GitPod does not require `sudo`, so if you use another IDE, you will need to include `sudo` in the beginning of the command: `sudo pip3 install -r requirements.txt`.*
 5. Create a new Database called "high_school_managers" in [MongoDB Atlas](https://www.mongodb.com/).   
 *You can sign up for free account, if you do not have one.*
-6. In "high_school_managers" database create five following collections:
-
-
-```
+6. In "high_school_managers" database create the following collections:
 ###### assignments
 ```
 _id: <ObjectId>
