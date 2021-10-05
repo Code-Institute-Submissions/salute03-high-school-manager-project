@@ -1,6 +1,6 @@
 # [St John's](https://high-school-manager-project.herokuapp.com/)   
 
-![Various Devices](https://github.com/salute03/high-school-manager-project/static/img/responsive.jpg.png)
+![Various Devices](/static/img/responsive.jpg.png)
 
 "St John's" - Practical Python and Data-Centric Development Milestone Project.
 
