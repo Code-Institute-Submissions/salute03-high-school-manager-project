@@ -61,28 +61,19 @@ body {
     border-radius: 1.5rem;
     width: 100%;
 }
-.hero-image {
-    background-image: url(../img/saintes.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    border-radius: 1.5rem;
-    width: 100%;
-}
 
 .text-block-home {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #000;
-    width: inherit;
     padding: 0 .5rem;
-    
-}
+    font-family: 'Pacifico', cursive;
+} 
 
-.home-paragpaph {
-    font-size: 2rem;
+.home-paragpaph,
+.primary-heading {
+    font-size: 7rem;
     margin-bottom: 4rem;
 }
 
@@ -91,6 +82,22 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
+}
+
+.primary-heading {
+    background-image: linear-gradient(90deg, rgba(94,114,235,1) 0%, rgba(225,145,144,1) 56%,
+    rgba(254,193,149,1) 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+
+    animation: move 1s infinite;
+}
+
+@keyframes move {
+    50% {
+        background-image: linear-gradient(262deg, rgba(94,114,235,1) 0%, rgba(225,145,144,1) 56%,
+        rgba(254,193,149,1) 100%);
+    }
 }
 
 
