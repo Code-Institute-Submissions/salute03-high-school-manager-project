@@ -6,7 +6,7 @@
 
 The main purpose of this full-stack MongoDB-based Flask project is to create a database for educational to allows users to create, read, update and delete (CRUD) assignments.
 This web page is maily used by class teachers of  [St John's] High Shcool during the covid-19 lock down, to create Assignments for students, From which students can read the questions. At the same time, it gives the opportunity to create an account and benifit from having convenient access to all features of the website.
-Registered users can add new recipes, edit and delete their own ones, as well as edit their username and password or delete account.  
+Registered users can add assignments, edit and delete  it, as well as edit their username and password or delete account.  
 
 ---
 

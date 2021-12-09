@@ -81,7 +81,7 @@ def login():
 def create_assignment():
     if request.method == "POST":
         assignment = {
-            "days-name": request.form.get("days_name"),
+            "days_name": request.form.get("days_name"),
             "subject_name": request.form.get("subject_name"),
             "topic_name": request.form.get("topic_name"),
             "question": request.form.get("question"),

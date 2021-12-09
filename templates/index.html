@@ -24,16 +24,16 @@
             {% endif %}
         </div>
         <div class="col s9">
-            <strong>{{ assignment.days_name }}</strong> 
+            <strong>{{ assignment.days_name }} Assigngment</strong> 
         </div>
         </div>
         <div class="collapsible-body">
-            <p><strong>Subject:</strong>{{ assignment.subject_name }}</p>
-            <p><strong>Topic:</strong>{{ assignment.topic_name }}</p>
-            <p><strong>Questions:</strong>{{ assignment.question }}</p>
-            <p><strong>Due date:</strong>{{ assignment.due_date }}</p>
-            <p>{{ assignment.mark }}</p>
-            <p><em>by:  {{ assignment.created_by }}</em></p>
+            <p><strong>Subject:</strong> {{ assignment.subject_name }}</p>
+            <p><strong>Topic:</strong> {{ assignment.topic_name }}</p>
+            <p><strong>Questions:</strong> {{ assignment.question }}</p>
+            <p><strong>Due date:</strong> {{ assignment.due_date }}</p>
+            <p><strong>Mark:</strong> {{ assignment.mark }}</p>
+            <p><em><strong>Teacher:</strong> {{ assignment.created_by }}</em></p>
         </div>
     </li>
     {% endfor %}
